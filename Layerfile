@@ -1,24 +1,15 @@
+#This is an example LayerCI configuration for NodeJS 10.x!
 FROM vm/ubuntu:18.04
 
-# Install docker-ce (from tutorial for ubuntu)
-RUN apt-get update && \
-    apt-get install apt-transport-https ca-certificates curl software-properties-common && \
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
-    apt-get update && \
-    apt install docker-ce
+# To note: Layerfiles create entire VMs, *not* containers!
 
-# Install docker-compose
-RUN curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
-    chmod +x /usr/local/bin/docker-compose
+# Install node 10
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
+RUN apt install nodejs
+RUN npm install -g http-server
 
-# Copy repository files
-COPY / /root
+COPY . .
+RUN echo 'hello' > hello.html
 
-# Pull any dependencies from docker hub
-RUN /root/pull-images.sh
-
-# Build & start the necessary microservices
-RUN REPEATABLE docker-compose up -d --build --force-recreate --remove-orphans && sleep 2
-
-EXPOSE WEBSITE localhost:8000
+RUN BACKGROUND http-server -p 8000
+EXPOSE WEBSITE http://localhost:8000
