@@ -1,4 +1,4 @@
-# Simple Express / Node.js hello world app
+# Simple Node.js hello world app
 
 I needed a demo application.  Since then I've added little bits and pieces to expand.
 
