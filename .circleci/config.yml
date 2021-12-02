@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     machine:
-      - image: ubuntu-2004:202111-01 # the primary container, where your job's commands are run
+      image: ubuntu-2004:202111-01 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
       - run: cat /etc/os-release
