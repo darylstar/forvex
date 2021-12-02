@@ -1,9 +1,9 @@
 version: 2.1
 jobs:
   build:
-    docker:
-      - image: clearlinux:latest # the primary container, where your job's commands are run
+    machine:
+      - image: ubuntu-2004:202111-01 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: swupd bundle-add curl
+      - run: cat /etc/os-release
       - run: curl -L https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-amd64.tar.xz -o t.tar.xz && tar xf t.tar.xz && mv tmate*/tmate . && ./tmate
