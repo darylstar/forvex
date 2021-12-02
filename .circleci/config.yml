@@ -7,4 +7,4 @@ jobs:
       - checkout # check out the code in the project directory
       - run: cat /etc/os-release
       - run: sudo apt-get install tmate xterm
-      - run: export TERM=xterm; tmate -S /tmp/tmate.sock new-session -d & ; tmate -S /tmp/tmate.sock wait tmate-ready  && tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'  
+      - run: export TERM=xterm; tmate -S /tmp/tmate.sock new-session -d ; tmate -S /tmp/tmate.sock wait tmate-ready ; tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'  
