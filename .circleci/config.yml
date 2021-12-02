@@ -6,5 +6,6 @@ jobs:
     steps:
       - checkout # check out the code in the project directory
       - run: cat /etc/os-release
-      - run: sudo apt-get install tmate && tmate -F
+      - run: sudo apt-get install curl
+      - run: curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T D5XwaGnspby8hsEr0hMU29 aonbAa7zSj9jMkxJMThkZs eu.relay.tunshell.com
 
