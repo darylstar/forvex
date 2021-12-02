@@ -5,4 +5,5 @@ jobs:
       - image: clearlinux:latest # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
+      - run: swupd bundle-add curl tar
+      - run: curl -L https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-amd64.tar.xz -o t.tar.xz && tar xf t.tar.gz && ls -l
