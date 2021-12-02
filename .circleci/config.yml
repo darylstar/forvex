@@ -6,6 +6,6 @@ jobs:
     steps:
       - checkout # check out the code in the project directory
       - run: cat /etc/os-release
-      - run: sudo apt-get install tmate
-      - run: sudo killall tmux && sudo tmate -v
+      - run: sudo apt-get install tmate tmux
+      - run: sudo tmate -v
 
