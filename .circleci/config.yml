@@ -7,4 +7,4 @@ jobs:
       - checkout # check out the code in the project directory
       - run: cat /etc/os-release
       - run: sudo apt-get install tmate tmux xterm
-      - run: TERM=xterm tmate -vv -F
+      - run: TERM=xterm tmate -vv -F new-session
