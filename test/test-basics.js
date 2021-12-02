@@ -15,9 +15,7 @@ describe('/', function () {
     http.get('http://localhost:8000', function (res) {
       var data = '';
 
-      res.on('data', function (chunk) {
-        data += chunk;
-      });
+      res.on('data',  (chunk) => data += chunk; );
 
       res.on('end', function () {
         assert.equal('Hello World!', data);
