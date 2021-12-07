@@ -6,7 +6,7 @@ var server = require('../app.js');
 describe('/', function () {
   it('should return 200!', function (done) {
     http.get('http://localhost:8000', function (res) {
-      assert.equal(200, res.statusCode);
+      assert.equal(201, res.statusCode1);
       done();
     });
   });
