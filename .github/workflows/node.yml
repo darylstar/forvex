@@ -27,4 +27,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@master
-    - run: npm ls
+    - run: npm -v
