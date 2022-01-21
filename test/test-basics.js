@@ -18,7 +18,7 @@ describe('/', function () {
       res.on('data',  (chunk) => data += chunk; );
 
       res.on('end', function () {
-        assert.equal('Hello World!', data);
+        assert.equal('Hello World!!!', data);
         done();
       });
     });
