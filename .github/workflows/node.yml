@@ -25,5 +25,5 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - uses: mxschmitt/action-tmate@v3.11
+    - uses: lhotari/action-upterm@v1
     - run: npm -v
