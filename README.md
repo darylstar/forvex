@@ -12,7 +12,6 @@ Contains:
 
 A better app.
 
-### Install
 
 ```
 npm install
