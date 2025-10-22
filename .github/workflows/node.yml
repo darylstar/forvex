@@ -17,8 +17,8 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: lhotari/action-upterm@v1
     - uses: actions/checkout@v2
+    - uses: mxschmitt/action-tmate@v
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
